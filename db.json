@@ -1,0 +1,36 @@
+{
+  "shopping": [
+    {
+      "id": 1,
+      "name": "milk"
+    },
+    {
+      "id": "c96c4f18-7fa7-47c7-855b-a3435194216d",
+      "name": "c1"
+    },
+    {
+      "id": "90dfcae2-5ab4-4a95-a6bf-f4a7c5228a10",
+      "name": ""
+    },
+    {
+      "id": "48b49da0-6e35-4bb5-a33c-30963e0af211",
+      "name": "dsfsfs"
+    },
+    {
+      "id": "1cfd153e-7816-46f3-a785-142061cf9019",
+      "name": "sdfsdfsdf"
+    },
+    {
+      "id": "cc3ad800-0eeb-41f4-a8dc-3286ea66edfb",
+      "name": "dfgdfgdf"
+    },
+    {
+      "id": "e3ab45f3-dcff-42b9-a7c2-be6075079894",
+      "name": "sfdsfs"
+    },
+    {
+      "id": "19ce4584-0655-45b0-850b-3370603db314",
+      "name": "2222"
+    }
+  ]
+}

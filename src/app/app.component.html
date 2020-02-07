@@ -1,0 +1,10 @@
+<div *ngFor="let item of shoppingItems$|async">
+  {{item.name}} <button (click)="deleteItem(item.id)">delete</button>
+  <br>
+</div>
+
+<label>
+  new item name:
+  <input type="text" [(ngModel)]="newItemName">
+</label>
+<button (click)="addItem()">add</button>
