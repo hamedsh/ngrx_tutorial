@@ -48,13 +48,24 @@ export class DeleteItemAction implements Action {
   constructor(public payload: string) {
   }
 }
+export class DeleteItemActionSuccess implements Action {
+  readonly type = ShoppingActionTypes.DELETE_ITEM_S;
+  constructor(public payload: string) {
+  }
+}
+export class DeleteItemActionFailed implements Action {
+  readonly type = ShoppingActionTypes.DELETE_ITEM_F;
+  constructor(public payload: string) {
+  }
+}
 
 export type shoppingAction =
-  DeleteItemAction
   | LoadItems
   | LoadItemsSuccess
   | LoadItemsFailure
   | AddItemAction
   | AddItemActionSuccess
-  | AddItemActionFailure
+  | DeleteItemAction
+  | DeleteItemActionSuccess
+  | DeleteItemActionFailed
   ;

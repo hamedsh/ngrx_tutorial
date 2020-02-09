@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {
   AddItemAction, AddItemActionFailure,
-  AddItemActionSuccess,
+  AddItemActionSuccess, DeleteItemAction, DeleteItemActionFailed, DeleteItemActionSuccess,
   LoadItems,
   LoadItemsFailure,
   LoadItemsSuccess,
@@ -34,6 +34,17 @@ export class ShoppingEffects {
       (data) => this.shoppingService.addShoppingItem(data.payload).pipe(
         map(() => new AddItemActionSuccess(data.payload)),
         catchError(error => of(new AddItemActionFailure(error)))
+      )
+    )
+  );
+
+  @Effect()
+  DelItem = this.action$.pipe(
+    ofType<DeleteItemAction>(ShoppingActionTypes.DELETE_ITEM),
+    mergeMap(
+      (data) => this.shoppingService.deleteShoppingItem(data.payload).pipe(
+        map(() => new DeleteItemActionSuccess(data.payload)),
+        catchError(error => of(new DeleteItemActionFailed(error)))
       )
     )
   );

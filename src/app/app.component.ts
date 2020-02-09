@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {AppState} from './store/models/app-state.model';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import {ShoppingItem} from './store/shopping.item';
 import {AddItemAction, DeleteItemAction, LoadItems} from './actions/shopping.actions';
 import * as uuid from 'uuid';
+import {getItems} from './reducers/shopping.reducer';
 
 @Component({
   selector: 'app-root',
@@ -20,11 +21,12 @@ export class AppComponent implements OnInit{
   constructor(private store: Store<AppState>) {
   }
   ngOnInit(): void {
-    this.shoppingItems$ = this.store.select(store => store.shopping.list);
-    this.loading$ = this.store.select(store => store.shopping.loading );
-    this.error$ = this.store.select(store => store.shopping.error );
+    // this.shoppingItems$ = this.store.select(store => store.shopping.list);
+    // this.loading$ = this.store.select(store => store.shopping.loading );
+    // this.error$ = this.store.select(store => store.shopping.error );
 
     this.store.dispatch(new LoadItems());
+    this.shoppingItems$ = this.store.pipe(select(getItems));
   }
 
   addItem() {

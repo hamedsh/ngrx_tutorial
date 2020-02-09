@@ -22,7 +22,7 @@ import {ShoppingEffects} from './effects/shopping.effets';
     HttpClientModule,
     FormsModule,
     StoreModule.forRoot({
-      shopping: shoppingReducer
+      items: shoppingReducer // this will defined in reducer/ selector
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([ShoppingEffects])
